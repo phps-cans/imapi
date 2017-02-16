@@ -1,12 +1,12 @@
 <?php
 
-namespace Imapi;
+namespace PSCS;
 
 use Horde_Imap_Client_Fetch_Query;
 use Horde_Imap_Client_Ids;
 use Horde_Imap_Client_Search_Query;
 use Horde_Imap_Client_Socket;
-use Imapi\Query\Query;
+use PSCS\Query\Query;
 
 /**
  * Client for an IMAP connection.
@@ -177,6 +177,7 @@ class Client
         $query->envelope();
         $query->fullText([
             'peek' => true,
+            'decode' => true,
         ]);
         $query->flags();
 

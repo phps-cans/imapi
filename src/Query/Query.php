@@ -1,6 +1,6 @@
 <?php
 
-namespace Imapi\Query;
+namespace PSCS\Query;
 
 /**
  * Query.

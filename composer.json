@@ -1,16 +1,16 @@
 {
-    "name": "mnapoli/imapi",
+    "name": "phps-cans/imapi",
     "description": "IMAP API",
     "license": "MIT",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Imapi\\": "src/"
+            "PSCS\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Imapi\\Test\\": "tests/"
+            "PSCS\\Test\\": "tests/"
         }
     },
     "require": {

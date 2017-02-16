@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Imapi;
+namespace PSCS;
 
 use DateTime;
 use Horde_Imap_Client;
@@ -29,8 +29,10 @@ class EmailFactory
         // Parse the message body
         $parser = new Parser();
         $parser->setText($hordeEmail->getFullMsg());
-        $htmlContent = utf8_encode((string) $parser->getMessageBody('html'));
-        $textContent = utf8_encode((string) $parser->getMessageBody('text'));
+        $htmlBody = (string) $parser->getMessageBody('html');
+        $htmlContent = iconv(mb_detect_encoding($htmlBody),"UTF-8", $htmlBody);
+        $textBody = $parser->getMessageBody('text');
+        $textContent = iconv(mb_detect_encoding($textBody),"UTF-8", $textBody);
 
         // Filter HTML body to have only safe HTML
         $htmlContent = trim($this->htmlFilter->purify($htmlContent));

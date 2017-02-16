@@ -1,6 +1,6 @@
 <?php
 
-namespace Imapi;
+namespace PSCS;
 
 /**
  * Email address associated to a name.
